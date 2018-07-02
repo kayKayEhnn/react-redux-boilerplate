@@ -44,13 +44,20 @@ const config = {
     new HTMLWebpackPlugin({ template: path.join(__dirname, 'public/index.html') })
   ]
 }
+
 const productionOnly = (config) => {
   /** @type {webpack.Configuration} */
   const specificProps = {
     mode: 'production',
-    devtool: 'none' // remove HMR plugin
+    devtool: 'none'
   }
-  return Object.assign(config, specificProps)
+
+  const productionConfig = {
+    ...config,
+    ...specificProps,
+    plugins: config.plugins.filter(p => !(p instanceof webpack.HotModuleReplacementPlugin))
+  }
+  return productionConfig
 }
 
 module.exports = env => env === 'production' ? productionOnly(config) : config
