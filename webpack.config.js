@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-/** @type {Configuration} */
+/** @type {webpack.Configuration} */
 const config = {
   mode: 'development',
   entry: path.join(__dirname, 'src/index.js'),
@@ -45,7 +45,7 @@ const config = {
   ]
 }
 const productionOnly = (config) => {
-  /** @type {Configuration} */
+  /** @type {webpack.Configuration} */
   const specificProps = {
     mode: 'production',
     devtool: 'none' // remove HMR plugin
