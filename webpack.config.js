@@ -35,8 +35,7 @@ const config = {
   devServer: {
     open: true,
     port: 3000,
-    hot: true,
-    openPage: '/'
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
