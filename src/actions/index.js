@@ -8,3 +8,7 @@ export function increment () {
 export function decrement () {
   return { type: DECREMENT }
 }
+
+export function incrementAsync () {
+  return dispatch => setTimeout(() => dispatch(increment()), 1000)
+}
