@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './App'
+import Root from './Root'
+import configureStore from './store/configureStore'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const store = configureStore()
 
-if (module.hot) {
-  module.hot.accept('./App')
-}
+ReactDOM.render(<Root store={store} />, document.getElementById('root'))

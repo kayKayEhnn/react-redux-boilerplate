@@ -1,7 +1,7 @@
 import React from 'react'
 import { hot } from 'react-hot-loader'
 
-import Counter from './Counter'
+import Counter from './containers/CounterContainer'
 import './style.css'
 
 const App = () => <Counter />
