@@ -35,7 +35,8 @@ const config = {
   devServer: {
     open: true,
     port: 3000,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
