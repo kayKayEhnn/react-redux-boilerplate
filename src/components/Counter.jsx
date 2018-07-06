@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 
 const Counter = ({ count, increment, decrement, incrementAsync }) => (
   <Fragment>
@@ -8,5 +9,12 @@ const Counter = ({ count, increment, decrement, incrementAsync }) => (
     <button onClick={incrementAsync}>Increment Async</button>
   </Fragment>
 )
+
+Counter.propTypes = {
+  count: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+  incrementAsync: PropTypes.func.isRequired
+}
 
 export default Counter
